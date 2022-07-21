@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
-    protected $with=['department'];
+
     protected $fillable = ['name'];
 
     /**
@@ -17,5 +17,13 @@ class Employee extends Model
     public function department()
     {
         return $this->belongsTo(Department::class, 'department_id', 'id');
+    }
+
+    /**
+     * Get the projects of the employee.
+     */
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class, 'project_id', 'id');
     }
 }

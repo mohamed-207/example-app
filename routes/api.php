@@ -24,3 +24,4 @@ Route::get('/test1', function (Request $request) {
 
 Route::get('/emp', 'App\Http\Controllers\employeeController@index');
 Route::get('/dep', 'App\Http\Controllers\departmentController@index');
+Route::get('/projects', 'App\Http\Controllers\projectController@index');
